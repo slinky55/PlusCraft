@@ -5,8 +5,12 @@
 #include <glm/glm.hpp>
 #include <iostream>
 
+#include "Color.hpp"
+
 constexpr uint32_t SCR_WIDTH = 800;
 constexpr uint32_t SCR_HEIGHT = 600;
+
+constexpr Color SKY_COLOR = { 0x87, 0xce, 0xeb, 0xff };
 
 void framebuffer_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
@@ -49,7 +53,7 @@ int main(int argc, char *argv[])
 
     while (!glfwWindowShouldClose(window))
     {
-        glClearColor(0.43f, 0.12f, 0.f, 0.08f);
+        glClearColor(SKY_COLOR.getRGL(), SKY_COLOR.getGGL(), SKY_COLOR.getBGL(), SKY_COLOR.getAGL());
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glfwSwapBuffers(window);
