@@ -31,7 +31,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(glfw glad glm)
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/Block.cpp)
 
 #add_custom_target(
 #        copy-shaders ALL
@@ -41,5 +41,4 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 add_dependencies(${PROJECT_NAME} glfw glad glm)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw glad glm)

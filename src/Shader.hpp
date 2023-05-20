@@ -5,8 +5,8 @@
 #ifndef PLUSCRAFT_SHADER_HPP
 #define PLUSCRAFT_SHADER_HPP
 
-#include <glad/glad.h>
-#include <glm/glm.hpp>
+#include "glad/glad.h"
+#include "glm/glm.hpp"
 
 #include <string>
 #include <fstream>

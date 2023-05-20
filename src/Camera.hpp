@@ -5,9 +5,9 @@
 #ifndef PLUSCRAFT_CAMERA_HPP
 #define PLUSCRAFT_CAMERA_HPP
 
-#include <glad/glad.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
+#include "glad/glad.h"
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
 
 #include <vector>
 
