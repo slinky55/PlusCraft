@@ -31,14 +31,20 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(glfw glad glm)
 
-add_executable(${PROJECT_NAME} src/main.cpp src/Block.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/Block.cpp src/Texture.cpp)
 
-#add_custom_target(
-#        copy-shaders ALL
-#        COMMENT "Copying shaders"
-#        COMMAND ${CMAKE_COMMAND} -E copy_directory
-#        ${CMAKE_CURRENT_SOURCE_DIR}/src/shaders ${CMAKE_BINARY_DIR}/shaders)
+add_custom_target(
+        copy-shaders ALL
+        COMMENT "Copying shaders"
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/shaders ${CMAKE_BINARY_DIR}/res/shaders)
 
-add_dependencies(${PROJECT_NAME} glfw glad glm)
+add_custom_target(
+        copy-textures ALL
+        COMMENT "Copying textures"
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/res/textures ${CMAKE_BINARY_DIR}/res/textures)
+
+add_dependencies(${PROJECT_NAME} glfw glad glm copy-shaders copy-textures)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw glad glm)

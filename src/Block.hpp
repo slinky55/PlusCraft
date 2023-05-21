@@ -16,5 +16,7 @@ struct Block : public Entity {
     void draw(const Shader& _shader);
 };
 
+float CUBE_VERTICES[];
+
 
 #endif //PLUSCRAFT_BLOCK_HPP
